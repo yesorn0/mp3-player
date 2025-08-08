@@ -1,0 +1,83 @@
+# ==========================
+# Python 캐시 / 빌드 산출물
+# ==========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# ==========================
+# IDE / OS 설정 파일
+# ==========================
+.vscode/
+.idea/
+.DS_Store
+
+# ==========================
+# PyQt 임시 파일
+# ==========================
+*.ui~
+
+# ==========================
+# 프로젝트 실행과 무관한 폴더
+# ==========================
+download/
+lyrics/
+img/
+thumbnails/
+
+# ==========================
+# 가상환경
+# ==========================
+.venv/
+env/
+venv/
+
+# ==========================
+# imgs 폴더
+# 기본적으로 모든 파일 제외
+# 필요한 PNG만 예외로 허용
+# ==========================
+imgs/*
+!imgs/music.png
+!imgs/play.png
+!imgs/pause.png
+!imgs/stop.png
+!imgs/previous.png
+!imgs/next.png
+!imgs/volume_H.png
+!imgs/volume_L.png
+!imgs/volume_mute.png
+!imgs/shuffle.png
+!imgs/repeat.png
+!imgs/repeat_1.png
+
+# ==========================
+# 불필요 이미지/테스트 파일
+# ==========================
+test.txt
+train_busan.jpg
+monster.jpg
+img.png
+
+# ==========================
+# 예제/연습용 Python 코드
+# ==========================
+GUI_base.py
+PyQt_exam01_poster.py
+PyQt_exam02_calculator.py
+PyQt_exam03_QtNotepad.py
+PyQt_exam04_Qmp3.py
+
+# ==========================
+# 예제/연습용 UI 파일
+# ==========================
+calculator.ui
+poster.ui
+QtNotepad.ui
+
+# ==========================
+# 오디오 / 로그 파일
+# ==========================
+*.mp3
+*.log

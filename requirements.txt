@@ -1,0 +1,5 @@
+PyQt5==5.15.9
+yt-dlp==2024.5.27
+mutagen==1.47.0
+requests==2.31.0
+pillow==10.3.0
