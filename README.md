@@ -18,6 +18,10 @@ GUI를 통한 재생 컨트롤 가능
 
 <img width="959" height="785" alt="image" src="https://github.com/user-attachments/assets/b74f28d4-22af-48fe-adbf-c6ef5f9f19c6" />
 
+<img width="955" height="787" alt="image" src="https://github.com/user-attachments/assets/13cef43c-2376-43f3-8cd1-8ee8e32d30b8" />
+
+<img width="961" height="791" alt="image" src="https://github.com/user-attachments/assets/d1b8092b-81c7-4ede-abf9-949378521b8c" />
+
 
 ---
 
