@@ -4,6 +4,23 @@
 
 ---
 
+### ✨ 예시
+
+입력:
+
+YouTube 링크: https://www.youtube.com/watch?v=hoIIKcT0R1U
+
+출력:
+
+music/ 폴더에 song_title.mp3 저장
+
+GUI를 통한 재생 컨트롤 가능
+
+<img width="959" height="785" alt="image" src="https://github.com/user-attachments/assets/b74f28d4-22af-48fe-adbf-c6ef5f9f19c6" />
+
+
+---
+
 ## 📸 소개
 
 음악 스트리밍 서비스가 없어도 원하는 노래를 간편하게 저장하고 재생해보세요!  
@@ -62,21 +79,6 @@ python player.py
 
 ---
 
-### ✨ 예시
-
-입력:
-
-YouTube 링크: https://www.youtube.com/watch?v=example123
-
-출력:
-
-music/ 폴더에 song_title.mp3 저장
-
-GUI를 통한 재생 컨트롤 가능
-
-💡 실제 재생 화면(GUI) 또는 다운로드 성공 화면 이미지를 여기에 추가해 주세요.
-
----
 
 ## 🛠️ 주요 기능
 ✅ YouTube 음원 추출 및 mp3 변환
