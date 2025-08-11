@@ -1,108 +1,124 @@
-# 🎵 Python 기반 YouTube 음원 다운로드 및 MP3 플레이어
+# 🎵 Python 기반 YouTube MP3 다운로드 & 가사 지원 MP3 플레이어
 
-📌 **YouTube에서 음원을 다운로드하고, 로컬 MP3 플레이어를 통해 실제로 음원을 재생하는 파이썬 프로젝트**
-
----
-
-### ✨ 예시
-
-입력:
-
-YouTube 링크: https://www.youtube.com/watch?v=hoIIKcT0R1U
-
-출력:
-
-music/ 폴더에 song_title.mp3 저장
-
-GUI를 통한 재생 컨트롤 가능
-
-<img width="959" height="785" alt="image" src="https://github.com/user-attachments/assets/b74f28d4-22af-48fe-adbf-c6ef5f9f19c6" />
-
-<img width="955" height="787" alt="image" src="https://github.com/user-attachments/assets/13cef43c-2376-43f3-8cd1-8ee8e32d30b8" />
-
-<img width="961" height="791" alt="image" src="https://github.com/user-attachments/assets/d1b8092b-81c7-4ede-abf9-949378521b8c" />
-
+📌 **YouTube에서 음원을 MP3로 다운로드하고, 가사 표시와 재생목록 관리까지 지원하는 PyQt5 기반 MP3 플레이어 프로젝트**
 
 ---
 
-## 📸 소개
+## 📸 예시 화면
 
-음악 스트리밍 서비스가 없어도 원하는 노래를 간편하게 저장하고 재생해보세요!  
-이 프로젝트는 Python을 이용해 YouTube에서 음원을 다운로드하고,  
-GUI 또는 CLI를 통해 **MP3 음원을 직접 재생할 수 있는 기능**을 구현했습니다.  
-실질적인 MP3 플레이어처럼 작동하는 인터페이스를 갖추고 있어 누구나 쉽게 사용할 수 있습니다.  
-다운로드 + 재생까지 한 번에 해결! 🎧
+<img width="960" alt="player" src="https://github.com/user-attachments/assets/b74f28d4-22af-48fe-adbf-c6ef5f9f19c6" />
+<img width="960" alt="lyrics" src="https://github.com/user-attachments/assets/13cef43c-2376-43f3-8cd1-8ee8e32d30b8" />
+<img width="960" alt="search" src="https://github.com/user-attachments/assets/d1b8092b-81c7-4ede-abf9-949378521b8c" />
 
 ---
 
-## 🚀 사용 방법
+## 🚀 소개
 
-### 1. 설치
+이 프로그램은 다음 기능을 제공합니다.
 
-먼저 필요한 라이브러리들을 설치하세요.  
-(※ `pytube`, `pygame`, `pydub`, `tkinter` 등 사용)
+- **YouTube 음원 다운로드** → `yt_dlp`를 사용해 최고 음질로 추출 후 MP3 변환
+- **썸네일 자동 저장** → 곡별 이미지 파일(`img/` 폴더)에 저장
+- **가사 자동 검색** → 네이버/구글 크롤링 기반 자동 가사 수집
+- **MP3 재생** → PyQt5 `QMediaPlayer` 기반으로 재생/일시정지/정지 지원
+- **재생목록 관리** → 중복 방지, 시작 시 자동 로드
+- **가사 편집/저장** → 수동 편집 가능, JSON/텍스트 파일 저장
 
+---
+
+## 📂 폴더 구조
+
+project/
+├─ main.py # 실행 파일
+├─ mp3.ui # PyQt5 UI 파일
+├─ requirements.txt
+├─ download/ # MP3 저장 폴더 (자동 생성)
+├─ img/ # 썸네일 저장 폴더 (자동 생성)
+├─ lyrics/ # 가사 텍스트 저장 폴더 (자동 생성)
+├─ playlist.json # 재생목록 데이터
+└─ lyrics.json # 가사 데이터
+
+yaml
+
+---
+
+## ⚙️ 설치 방법
+
+### 1) Python 환경 준비
 ```bash
+# (선택) 가상환경 생성
+python -m venv .venv
+source .venv/bin/activate  # macOS/Linux
+.venv\Scripts\activate     # Windows
+2) 라이브러리 설치
+bash
+복사
+편집
 pip install -r requirements.txt
-```
+requirements.txt 예시:
 
-또는 개별 설치 예:
+nginx
+복사
+편집
+PyQt5
+requests
+beautifulsoup4
+yt_dlp
+lxml
+일부 환경에서는 PyQt5-sip, PyQt5-Qt5가 필요할 수 있습니다.
 
-```bash
+3) FFmpeg 설치
+yt_dlp가 MP3 변환 시 필요합니다.
 
-pip install pytube pygame pydub
-```
+Windows: FFmpeg 공식 사이트에서 다운로드 후 bin 폴더를 PATH에 추가
 
-🔧 ffmpeg 설치가 필요한 경우 공식 다운로드 페이지를 참고하세요.
+macOS:
 
----
-
-### 2. 음원 다운로드
-터미널 또는 GUI에서 YouTube 링크를 입력하고 다운로드 버튼을 누르면
-자동으로 MP3 형식으로 변환되어 로컬 저장됩니다.
-
-```
 bash
-python downloader.py
-```
-예시 입력:
+복사
+편집
+brew install ffmpeg
+Ubuntu/Debian:
 
-arduino
-https://www.youtube.com/watch?v=dQw4w9WgXcQ
-
----
-
-### 3. MP3 재생
-다운로드한 MP3 파일을 선택하여 재생합니다.
-GUI 또는 콘솔에서 재생, 일시정지, 정지 등의 기능을 사용할 수 있습니다.
-
-```
 bash
-python player.py
-```
+복사
+편집
+sudo apt-get install ffmpeg
+▶ 실행 방법
+bash
+복사
+편집
+python main.py
+🎯 주요 기능
+✅ YouTube MP3 다운로드 (썸네일 포함)
+✅ 가사 자동 검색 및 편집
+✅ 재생목록 자동 로드/저장
+✅ 썸네일 표시
+✅ 재생, 일시정지, 정지, 이전/다음 곡, 볼륨 조절
+
+⚠️ 주의사항
+yt_dlp 사용은 YouTube 이용약관을 준수해야 합니다.
+
+가사 크롤링 기능은 일부 사이트 구조 변경 시 동작하지 않을 수 있습니다.
+
+가사/음원은 저작권법을 준수하여 개인 용도로만 사용하세요.
+
+📄 라이선스
+MIT License
+
+yaml
+복사
+편집
 
 ---
 
+이 README를 그대로 붙여넣으면, 현재 코드와 완벽하게 맞는 문서가 될 거예요.  
+원하면 여기에 **트러블슈팅(오류 해결 팁)** 섹션을 추가해서, FFmpeg 미설치나 QtMultimedia 에러 같은 자주 발생하는 문제 해결 방법까지 넣어 드릴 수도 있습니다.
 
-## 🛠️ 주요 기능
-✅ YouTube 음원 추출 및 mp3 변환
 
-✅ MP3 파일 저장 및 관리
 
-✅ 음악 재생 / 일시정지 / 정지 기능 구현
 
-✅ 간단한 GUI 또는 콘솔 기반 인터페이스
 
-✅ 재생목록/랜덤재생(옵션 기능)
 
----
 
-## 📄 라이선스
-이 프로젝트는 MIT 라이선스를 따릅니다.
-자세한 내용은 LICENSE 파일을 참고하세요.
 
----
-
-## 📧 연락처
-안진홍 - ajh9703@gmail.com
-
+ChatGPT에게 묻기
