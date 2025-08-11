@@ -31,6 +31,7 @@
 project/
 ├─ main.py # 실행 파일
 ├─ mp3.ui # PyQt5 UI 파일
+├─.gitignore
 ├─ requirements.txt
 ├─ download/ # MP3 저장 폴더 (자동 생성)
 ├─ img/ # 썸네일 저장 폴더 (자동 생성)
