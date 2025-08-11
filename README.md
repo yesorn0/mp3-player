@@ -38,88 +38,80 @@ project/
 ├─ playlist.json # 재생목록 데이터
 └─ lyrics.json # 가사 데이터
 ```
-yaml
 
 ---
 
 ## ⚙️ 설치 방법
 
 ### 1) Python 환경 준비
+
 ```bash
 # (선택) 가상환경 생성
 python -m venv .venv
 source .venv/bin/activate  # macOS/Linux
 .venv\Scripts\activate     # Windows
-2) 라이브러리 설치
-bash
-복사
-편집
-pip install -r requirements.txt
-requirements.txt 예시:
+```
 
-nginx
-복사
-편집
-PyQt5
-requests
-beautifulsoup4
-yt_dlp
-lxml
+
+### 2) 라이브러리 설치
+
+```bash
+pip install -r requirements.txt
+```
+
 일부 환경에서는 PyQt5-sip, PyQt5-Qt5가 필요할 수 있습니다.
 
-3) FFmpeg 설치
+
+### 3) FFmpeg 설치
+
 yt_dlp가 MP3 변환 시 필요합니다.
 
-Windows: FFmpeg 공식 사이트에서 다운로드 후 bin 폴더를 PATH에 추가
+### Windows: FFmpeg 공식 사이트에서 다운로드 후 bin 폴더를 PATH에 추가
 
-macOS:
+### macOS:
 
-bash
-복사
-편집
+```bash
 brew install ffmpeg
-Ubuntu/Debian:
+```
 
-bash
-복사
-편집
+### Ubuntu/Debian:
+
+```bash
 sudo apt-get install ffmpeg
-▶ 실행 방법
-bash
-복사
-편집
+```
+
+### ▶ 실행 방법
+
+```bash
 python main.py
-🎯 주요 기능
+```
+
+---
+
+## 🎯 주요 기능
 ✅ YouTube MP3 다운로드 (썸네일 포함)
 ✅ 가사 자동 검색 및 편집
 ✅ 재생목록 자동 로드/저장
 ✅ 썸네일 표시
 ✅ 재생, 일시정지, 정지, 이전/다음 곡, 볼륨 조절
 
-⚠️ 주의사항
+---
+
+## ⚠️ 주의사항
 yt_dlp 사용은 YouTube 이용약관을 준수해야 합니다.
 
 가사 크롤링 기능은 일부 사이트 구조 변경 시 동작하지 않을 수 있습니다.
 
 가사/음원은 저작권법을 준수하여 개인 용도로만 사용하세요.
 
-📄 라이선스
-MIT License
+---
 
-yaml
-복사
-편집
+## 📄 라이선스
+MIT License
 
 ---
 
-이 README를 그대로 붙여넣으면, 현재 코드와 완벽하게 맞는 문서가 될 거예요.  
-원하면 여기에 **트러블슈팅(오류 해결 팁)** 섹션을 추가해서, FFmpeg 미설치나 QtMultimedia 에러 같은 자주 발생하는 문제 해결 방법까지 넣어 드릴 수도 있습니다.
+## 📧 연락처
+안진홍 - ajh9703@gmail.com
 
 
-
-
-
-
-
-
-ChatGPT에게 묻기
